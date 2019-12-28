@@ -9,7 +9,7 @@ import { data } from './data';
 })
 export class AppComponent {
   data: any[];
-  view: any[] = [800, 500];
+  view: any[] = [900, 500];
 
   // options
   gradient: boolean = true;
