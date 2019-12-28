@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { data } from './data';
-import { inherits } from 'util';
 
 @Component({
   selector: 'app-root',
