@@ -15,7 +15,7 @@ import { createCustomElement } from '@angular/elements';
     AppComponent,
     PieChartComponent
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,7 +26,7 @@ import { createCustomElement } from '@angular/elements';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
   constructor(injector: Injector) {
     const el = createCustomElement(PieChartComponent, { injector: injector });
     customElements.define('wc-pie-chart', el);

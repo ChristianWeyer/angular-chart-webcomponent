@@ -1,17 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-
-import { data } from './../data';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.scss']
 })
-export class PieChartComponent implements OnInit {
+export class PieChartComponent {
+  @Input()
   data: any[];
+
   view: any[] = [900, 500];
 
-  // options
   gradient: boolean = true;
   showLegend: boolean = true;
   showLabels: boolean = true;
@@ -21,22 +20,15 @@ export class PieChartComponent implements OnInit {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
 
-  constructor() {
-    Object.assign(this, { data });
+  onSelect(eventData): void {
+    console.log('Item clicked', JSON.parse(JSON.stringify(eventData)));
   }
 
-  onSelect(data): void {
-    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+  onActivate(eventData): void {
+    console.log('Activate', JSON.parse(JSON.stringify(eventData)));
   }
 
-  onActivate(data): void {
-    console.log('Activate', JSON.parse(JSON.stringify(data)));
-  }
-
-  onDeactivate(data): void {
-    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
-  }
-
-  ngOnInit() {
+  onDeactivate(eventData): void {
+    console.log('Deactivate', JSON.parse(JSON.stringify(eventData)));
   }
 }
